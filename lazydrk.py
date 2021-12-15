@@ -11,7 +11,7 @@
 import os
 import time
 from termcolor import colored
-
+import subprocess
 
 # Global Variables
 discord = "drk#1337"
@@ -20,6 +20,80 @@ tooldir = "./assets/tools"
 # Defines
 def enter():
     input("Press enter to continue.")
+
+def notwrk():
+    print("This is currently under development. /drk")
+    time.sleep(3)
+    usage()
+
+def misc():
+    clearcmd()
+    print(colored("""
+     _______             __        __       __  __                     
+    /       \           /  |      /  \     /  |/  |                    
+    $$$$$$$  |  ______  $$ |   __ $$  \   /$$ |$$/   _______   _______ 
+    $$ |  $$ | /      \ $$ |  /  |$$$  \ /$$$ |/  | /       | /       |
+    $$ |  $$ |/$$$$$$  |$$ |_/$$/ $$$$  /$$$$ |$$ |/$$$$$$$/ /$$$$$$$/ 
+    $$ |  $$ |$$ |  $$/ $$   $$<  $$ $$ $$/$$ |$$ |$$      \ $$ |      
+    $$ |__$$ |$$ |      $$$$$$  \ $$ |$$$/ $$ |$$ | $$$$$$  |$$ \_____ 
+    $$    $$/ $$ |      $$ | $$  |$$ | $/  $$ |$$ |/     $$/ $$       |
+    $$$$$$$/  $$/       $$/   $$/ $$/      $$/ $$/ $$$$$$$/   $$$$$$$/ 
+                                                                    
+    """, "red"))
+    print("""
+    [1] Ifconfig
+    [2] Whoami
+    [3] Netstat
+    [4] Coming soon.
+    [5] Coming soon.
+    [6] Coming soon.
+    [7] Coming soon.
+    [8] Coming soon.
+
+    [9] Go back
+    """)
+    USERIN = input("Option: ")
+    if USERIN == "1":
+        print("-----------------")
+        print("OUTPUT:")
+        os.system('ipconfig' if os.name == 'nt' else 'ifconfig')
+        print("-----------------")
+        input("\nPress enter to continue.")
+        misc()
+
+    elif USERIN == "2":
+        print("-----------------")
+        print("OUTPUT:\n")
+        os.system('whoami' if os.name == 'nt' else 'whoami')
+        print("-----------------")
+        input("\nPress enter to continue.")
+        misc()
+
+    elif USERIN == "3":
+        print("-----------------")
+        print("OUTPUT:\n")
+        os.system('netstat' if os.name == 'nt' else 'netstat')
+        print("-----------------")
+        input("\nPress enter to continue.")
+        misc()
+
+    elif USERIN == "4":
+        notwrk()
+
+    elif USERIN == "5":
+        notwrk()
+
+    elif USERIN == "6":
+        notwrk()
+
+    elif USERIN == "7":
+        notwrk()
+
+    elif USERIN == "8":
+        notwrk()
+
+    elif USERIN == "9":
+        usage()
 
 def banner():
     print(colored("""
@@ -64,18 +138,15 @@ def drktools():
     """)
     option = input("Option: ")
     if option == "1":
-        read = exec(open(f"{tooldir}/accountmanager/manager.py").read())
-        print(read)
-        time.sleep(3)
-
+        notwrk()
     elif option == "2":
-        pass
+        notwrk()
     elif option == "3":
-        pass
+        notwrk()
     elif option == "4":
-        pass
+        notwrk()
     elif option == "5":
-        pass
+        notwrk()
     elif option == "6":
         usage()
     elif option == "drk":
@@ -102,19 +173,19 @@ def usage():
     """)
     option = input("Option: ")
     if option == "1":
-        pass
+        misc()
     elif option == "2":
         drktools()
     elif option == "3":
-        pass
+        notwrk()
     elif option == "4":
-        pass
+        notwrk()
     elif option == "5":
-        pass
+        notwrk()
     elif option == "6":
-        pass
+        notwrk()
     elif option == "7":
-        pass
+        notwrk()
     elif option == "8":
         print(colored("Quitting.", "red"))
         time.sleep(1)
